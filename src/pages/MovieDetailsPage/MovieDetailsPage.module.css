@@ -1,0 +1,96 @@
+.detailsDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+.posterDiv {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+}
+
+.posterImg {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 0 3px 2px #f1f1f1;
+  padding: 5px;
+  width: 100%;
+  object-fit: cover;
+
+  grid-row-start: span 4;
+}
+
+.descriptionDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.ratingDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.rating {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2693df;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 0 3px 2px #f1f1f1;
+  padding: 0px 8px;
+}
+
+.ratingSpan {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.overviewInfo {
+  font-size: 14px;
+  padding: 5px;
+}
+
+.overviewInfoSpan {
+  font-weight: bold;
+}
+
+.overview {
+  width: 100%;
+  background-color: whitesmoke#ffe;
+  border: 1px solid #eaeaea;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 0 3px 2px #f1f1f1;
+  padding: 5px;
+}
+
+.infoLinkDiv {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.infoLink {
+  font-size: 23px;
+  font-weight: bold;
+  color: #344c5e;
+  transition: color 250ms ease;
+}
+
+.infoLink:hover,
+.infoLink:focus {
+  color: #5d7a91;
+}

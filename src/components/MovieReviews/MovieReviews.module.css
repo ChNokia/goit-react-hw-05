@@ -1,0 +1,65 @@
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reviewDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.reviewAuthorDiv {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 12px;
+  align-self: flex-start;
+}
+
+.authorAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+
+.authorDiv {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.authorUserName {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.11;
+  color: #170f49;
+}
+
+.authorName {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.11;
+  color: #6f6c90;
+}
+
+.date {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.11;
+  color: #6f6c90;
+}
+
+.content {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+}

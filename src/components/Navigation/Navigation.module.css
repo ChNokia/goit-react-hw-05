@@ -1,0 +1,18 @@
+.navMenu {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  width: 100%;
+  gap: 10px;
+}
+
+.navLink {
+  font-weight: 600;
+}
+
+.active {
+  color: red;
+}
