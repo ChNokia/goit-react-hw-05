@@ -18,6 +18,9 @@ const MoviesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadMoreVisible, setIsLoadMoreVisible] = useState(false);
+  const [isEmptyList, setIsEmptyList] = useState(false);
+
+  const queryText = searchParams.get('query') ?? '';
 
   useEffect(() => {
     setCurrentPage(+(searchParams?.get('currentPage') ?? 1));
@@ -33,9 +36,11 @@ const MoviesPage = () => {
       try {
         setIsLoading(true);
         const data = await searchMoviesByQuery(query, { page: currentPage });
-        console.log(data);
 
-        setSearchMovies(prev => [...prev, ...data.results]);
+        setSearchMovies(prev => {
+          setIsEmptyList(!prev.length && !data.results.length);
+          return [...prev, ...data.results];
+        });
         setIsLoadMoreVisible(currentPage < data.total_pages);
       } catch (error) {
         notify(error);
@@ -47,7 +52,9 @@ const MoviesPage = () => {
     getQueryMovies();
   }, [query, currentPage]);
 
-  const handleSearch = newQuery => {
+  const handleSearchQuery = newQuery => {
+    setIsLoadMoreVisible(false);
+    setIsEmptyList(false);
     setSearchMovies([]);
     searchParams.set('currentPage', 1);
     searchParams.set('query', newQuery);
@@ -61,11 +68,12 @@ const MoviesPage = () => {
 
   return (
     <div className={styles.moviePageDiv}>
-      <SearchBar onSubmit={handleSearch} />
+      <SearchBar handleSearch={handleSearchQuery} queryString={queryText} />
       <MovieListComponent
         movieList={searchMovies}
         isLoading={isLoading}
         isLoadMoreVisible={isLoadMoreVisible}
+        isEmptyList={isEmptyList}
         onLoadMore={handleMoreBtn}
       />
     </div>

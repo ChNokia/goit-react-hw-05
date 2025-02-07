@@ -20,7 +20,6 @@ const HomePage = () => {
       try {
         setIsLoading(true);
         const data = await fetchTrendingMovies(currentPage);
-        console.log(data);
         setMovies(prev => [...prev, ...data.results]);
         setIsLoadMoreVisible(currentPage < data.total_pages);
       } catch (error) {

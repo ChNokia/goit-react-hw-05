@@ -1,6 +1,7 @@
 import Loader from '../Loader/Loader';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import MovieList from '../MovieList/MovieList';
+import NoResult from '../NoResult/NoResult';
 
 import styles from './MovieListComponent.module.css';
 
@@ -9,6 +10,7 @@ const MovieListComponent = ({
   isLoading,
   isLoadMoreVisible,
   onLoadMore,
+  isEmptyList,
 }) => {
   const handleMoreBtn = () => {
     onLoadMore();
@@ -17,7 +19,7 @@ const MovieListComponent = ({
   return (
     <div className={styles.movieComponentDiv}>
       {movieList.length > 0 && <MovieList movies={movieList} />}
-      {/* add if searchMovies is empty */}
+      {isEmptyList && <NoResult />}
       {isLoading && <Loader />}
       {isLoadMoreVisible && <LoadMoreBtn clickAction={handleMoreBtn} />}
     </div>

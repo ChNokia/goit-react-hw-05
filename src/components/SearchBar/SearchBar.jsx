@@ -1,13 +1,13 @@
-import { useState } from 'react';
 import { GoSearch } from 'react-icons/go';
 import { Toaster, toast } from 'react-hot-toast';
 
 import styles from './SearchBar.module.css';
+import { useState } from 'react';
 
 const notify = (message = 'Empty query!') => toast.error(message);
 
-const SearchBar = ({ onSubmit }) => {
-  const [query, setQuery] = useState('');
+const SearchBar = ({ queryString, handleSearch }) => {
+  const [query, setQuery] = useState(() => queryString || '');
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -17,9 +17,9 @@ const SearchBar = ({ onSubmit }) => {
       notify();
       return;
     }
-    onSubmit(newQuery);
-    event.target.reset();
+    handleSearch(newQuery);
   };
+
   return (
     <header className={styles.searchHeader}>
       <Toaster />
@@ -27,9 +27,8 @@ const SearchBar = ({ onSubmit }) => {
         <input
           className={styles.searchInput}
           type="text"
-          autoComplete="off"
           autoFocus
-          placeholder="Search images and photos"
+          placeholder="Input movie's name"
           name="search"
           value={query}
           onChange={event => setQuery(event.target.value)}

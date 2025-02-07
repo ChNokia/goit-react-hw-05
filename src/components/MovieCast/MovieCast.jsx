@@ -17,8 +17,6 @@ const MovieCast = () => {
       try {
         setIsLoading(true);
         const data = await getMoviCredits(movieId);
-        console.log(data);
-
         setCast(data.cast);
       } catch (error) {
         toast.error(error);

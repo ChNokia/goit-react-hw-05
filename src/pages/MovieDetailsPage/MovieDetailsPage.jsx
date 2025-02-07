@@ -23,11 +23,8 @@ const MovieDetailsPage = () => {
     if (!movieId) {
       return;
     }
-    console.log(movieId);
     const getMovieDetails = async () => {
       const data = await getMovieDetailsById(movieId);
-
-      console.log(data);
       setMovieDetails(data);
     };
     getMovieDetails();

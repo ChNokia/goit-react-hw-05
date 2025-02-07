@@ -1,0 +1,12 @@
+.noResultsDiv {
+  background-color: #fff;
+  text-align: center;
+}
+.noResultsTitle {
+  font-weight: bold;
+  color: #172b4d;
+}
+
+.noResultsMessage {
+  color: #3f4146;
+}

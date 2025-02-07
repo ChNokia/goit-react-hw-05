@@ -21,7 +21,6 @@ export const searchMoviesByQuery = async (
   query,
   params = DEFAULT_SEARCH_PARAM
 ) => {
-  console.log(params);
   const data = await fetchData('search/movie', { query, ...params });
   return data;
 };

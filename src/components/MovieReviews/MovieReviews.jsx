@@ -17,8 +17,6 @@ const MovieReviews = () => {
       try {
         setIsLoading(true);
         const data = await getMovieReviews(movieId);
-        console.log(data.results);
-
         setReviews(data.results);
       } catch (error) {
         toast.error(error);
