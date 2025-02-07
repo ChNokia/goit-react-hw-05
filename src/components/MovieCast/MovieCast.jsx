@@ -31,7 +31,7 @@ const MovieCast = () => {
     <div>
       {isLoading && <TailSpin radius={'8px'} height="30" width="30" />}
       {!isLoading && cast.length === 0 && (
-        <p>We don't have any reviews for this movie.</p>
+        <p>We don't have any list of cast for this movie.</p>
       )}
       {cast.length > 0 && (
         <ul className={styles.castList}>
